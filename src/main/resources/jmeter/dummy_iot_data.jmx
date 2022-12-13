@@ -16,7 +16,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="url" elementType="Argument">
             <stringProp name="Argument.name">url</stringProp>
-            <stringProp name="Argument.value">http://localhost:8080/iot</stringProp>
+            <stringProp name="Argument.value">http://192.168.102.117:8081/iot</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="contentType" elementType="Argument">
@@ -132,13 +132,13 @@
               <stringProp name="-1322784874">tempBody</stringProp>
             </collectionProp>
             <collectionProp name="UserParameters.thread_values">
-              <collectionProp name="-566354958">
+              <collectionProp name="992394670">
                 <stringProp name="-1343129476">Server Room A (7/F)</stringProp>
-                <stringProp name="1435091850">{&quot;type&quot;: 0,      &quot;location&quot;: &quot;${location}&quot;,      &quot;decimalValue&quot;:  ${__groovy(org.apache.commons.lang3.RandomUtils.nextFloat(35.0f\,75.0f).round(1))} }</stringProp>
+                <stringProp name="57388258">{&quot;type&quot;: 0,      &quot;location&quot;: &quot;${location}&quot;,      &quot;decimalValue&quot;:  ${__groovy(org.apache.commons.lang3.RandomUtils.nextFloat(70.0f\,74.0f).round(1))} }</stringProp>
               </collectionProp>
-              <collectionProp name="-752690982">
+              <collectionProp name="416060831">
                 <stringProp name="-1244881300">Server Room B (15/F)</stringProp>
-                <stringProp name="1877227056">{&quot;type&quot;: 0,      &quot;location&quot;: &quot;${location}&quot;,      &quot;decimalValue&quot;: ${__groovy(org.apache.commons.lang3.RandomUtils.nextFloat(35.0f\,75.0f).round(1))} }</stringProp>
+                <stringProp name="-528568696">{&quot;type&quot;: 0,      &quot;location&quot;: &quot;${location}&quot;,      &quot;decimalValue&quot;: ${__groovy(org.apache.commons.lang3.RandomUtils.nextFloat(60.0f\,75.0f).round(1))} }</stringProp>
               </collectionProp>
             </collectionProp>
             <boolProp name="UserParameters.per_iteration">false</boolProp>
