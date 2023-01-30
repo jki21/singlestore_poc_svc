@@ -1,6 +1,8 @@
 package com.asl.single_store_poc;
 
 import com.asl.single_store_poc.model.IotRecord;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/iot")
 public class IotController {
-
+    Logger logger = LoggerFactory.getLogger(IotController.class);
     private final SingleStoreDBService dbService;
 
     public IotController(SingleStoreDBService dbService, IotRecordRepositry repository) {
@@ -30,6 +32,7 @@ public class IotController {
     @PostMapping("")
     Long insert(@RequestBody IotRecord rec)
     {
+        logger.info("inserting:{} {}",rec.getLocation(),rec.getDecimalValue());
         return dbService.addIotRecord(rec);
     }
 
