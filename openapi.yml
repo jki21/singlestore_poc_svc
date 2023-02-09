@@ -1,0 +1,82 @@
+openapi: '3.0.2'
+info:
+  title: APIs for java application
+  version: '1.0'
+
+servers:
+  - url: https://generator-data-generator.apps.ocps.demo.im-lab.org/
+    description: Secondary (OCPS)
+
+paths:
+  /iot/:
+    get:
+      summary: Health check
+      description: Health check API with no logic.
+      responses:
+        '200':    # status code
+          description: A JSON array of user names
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Alive  
+    post:
+      summary: Add iot record
+      description: Request to add iot records
+      requestBody:
+        description: Optional description in *Markdown*
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/iotRecord'
+      responses:
+        '200':
+          description: Created
+  /iot/{id}:
+    get:
+      summary: Get iot record by ID
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the record to get
+      responses:
+        '200':    # status code
+          description: iot record in JSON format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/iotRecord'
+     
+components:
+  schemas:
+    iotRecord:
+      title: A JSON object of IoT record
+      type: object
+      properties:
+        type:
+          type: integer
+          description: Record type. 0:Temperature
+          example: 0
+        location:
+          type: string
+          description: Source location of the data
+          example: Server Room A
+      oneOf:
+        - properties:
+            decimalValue:
+              type: number
+              description: Measured value. Should be provided for temperature data.
+              example: 37.7
+        - properties:
+            stringValue:
+              type: string
+              description: Text value. For types other than temperature.
+              example: "busy"
+      required:
+        - type
+        - location
+        
